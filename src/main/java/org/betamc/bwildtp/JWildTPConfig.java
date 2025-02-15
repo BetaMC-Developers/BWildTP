@@ -1,4 +1,4 @@
-package com.johnymuffin.beta.wildtp;
+package org.betamc.bwildtp;
 
 import org.bukkit.util.config.Configuration;
 

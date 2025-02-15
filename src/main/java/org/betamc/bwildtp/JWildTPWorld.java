@@ -1,4 +1,4 @@
-package com.johnymuffin.beta.wildtp;
+package org.betamc.bwildtp;
 
 public class JWildTPWorld {
     private final boolean enabled;

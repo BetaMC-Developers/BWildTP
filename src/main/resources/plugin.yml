@@ -1,11 +1,11 @@
-name: JWildTP
-main: com.johnymuffin.beta.wildtp.JWildTP
+name: BWildTP
+main: org.betamc.bwildtp.JWildTP
 version: 1.0.2
-author: JohnyMuffin
-description: A plugin to randomly teleport
+author: JohnyMuffin, SvGaming
+description: A plugin to randomly teleport, fork of JWildTP
 commands:
   wild:
-    description: A command to randomly teleport
+    description: A command to randomly teleport, fork of JWildTP
     usage: /<command>
     aliases: [random, rtp, randomtp]
 permissions:

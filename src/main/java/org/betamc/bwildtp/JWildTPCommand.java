@@ -1,4 +1,4 @@
-package com.johnymuffin.beta.wildtp;
+package org.betamc.bwildtp;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -11,8 +11,8 @@ import org.bukkit.entity.Player;
 
 import java.util.logging.Level;
 
-import static com.johnymuffin.beta.wildtp.JWildTPUtils.getSafeDestination;
-import static com.johnymuffin.beta.wildtp.JWildTPUtils.isPlayerAuthorized;
+import static org.betamc.bwildtp.JWildTPUtils.getSafeDestination;
+import static org.betamc.bwildtp.JWildTPUtils.isPlayerAuthorized;
 
 public class JWildTPCommand implements CommandExecutor {
     private JWildTP plugin;
