@@ -1,13 +1,11 @@
 package org.betamc.bwildtp;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Location;
-import org.bukkit.World;
+import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.Chunk;
 
 import java.util.logging.Level;
 
@@ -73,7 +71,11 @@ public class JWildTPCommand implements CommandExecutor {
         int randomZ = randomFlip(randomNumber(jWorld.getMinimumRadius(), jWorld.getMaximumRadius())) + jWorld.getCenterZ();
 
         Location unsafeLocation = new Location(world, randomX, 90, randomZ);
+        Chunk chunk = world.getChunkAt(randomX, randomZ);
         try {
+            if (!world.isChunkLoaded(chunk)) {
+                chunk.load(true);
+            }
             Location safeLocation = getSafeDestination(unsafeLocation);
             player.teleport(safeLocation);
             commandSender.sendMessage(JWildTPLanguage.getInstance().getMessage("teleport_successful"));
