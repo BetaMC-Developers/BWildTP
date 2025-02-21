@@ -21,7 +21,7 @@ public class JWildTPCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
-        if (!isPlayerAuthorized(commandSender, "jwildtp.wild")) {
+        if (!isPlayerAuthorized(commandSender, "jwildtp.wild") || !isPlayerAuthorized(commandSender, "bwildtp.wild")) {
             commandSender.sendMessage(JWildTPLanguage.getInstance().getMessage("no_permission"));
             return true;
         }
@@ -59,11 +59,13 @@ public class JWildTPCommand implements CommandExecutor {
             }
         }
 
-        if (plugin.getCoolDown().containsKey(player.getName())) {
-            if (plugin.getCoolDown().get(player.getName()) > (System.currentTimeMillis() / 1000L)) {
-                int coolDownLeft = (int) (plugin.getCoolDown().get(player.getName()) - (System.currentTimeMillis() / 1000L));
-                commandSender.sendMessage(ChatColor.RED + "Sorry, you can't randomly teleport for another " + coolDownLeft + " seconds");
-                return true;
+        if (!player.isOp() || !isPlayerAuthorized(commandSender, "bwildtp.wild.cooldown.exempt")) {
+            if (plugin.getCoolDown().containsKey(player.getName())) {
+                if (plugin.getCoolDown().get(player.getName()) > (System.currentTimeMillis() / 1000L)) {
+                    int coolDownLeft = (int) (plugin.getCoolDown().get(player.getName()) - (System.currentTimeMillis() / 1000L));
+                    commandSender.sendMessage(ChatColor.RED + "Sorry, you can't randomly teleport for another " + coolDownLeft + " seconds");
+                    return true;
+                }
             }
         }
 

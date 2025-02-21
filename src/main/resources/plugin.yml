@@ -9,5 +9,9 @@ commands:
     usage: /<command>
     aliases: [random, rtp, randomtp]
 permissions:
-  jwildtp.wild:
+  bwildtp.wild:
     description: Allows a player to randomly teleport
+  bwildtp.wild.cooldown.exempt:
+    description: Allows a player to be exempt from the Wild TP cooldown
+  jwildtp.wild:
+    description: Allows a player to randomly teleport (left for compatibility reasons)
