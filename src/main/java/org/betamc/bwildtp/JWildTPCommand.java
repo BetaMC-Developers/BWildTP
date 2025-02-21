@@ -21,7 +21,7 @@ public class JWildTPCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
-        if (!isPlayerAuthorized(commandSender, "jwildtp.wild") || !isPlayerAuthorized(commandSender, "bwildtp.wild")) {
+        if (!isPlayerAuthorized(commandSender, "bwildtp.wild")) {
             commandSender.sendMessage(JWildTPLanguage.getInstance().getMessage("no_permission"));
             return true;
         }
