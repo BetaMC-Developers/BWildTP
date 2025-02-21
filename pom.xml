@@ -6,7 +6,7 @@
 
     <groupId>org.betamc.bwildtp</groupId>
     <artifactId>BWildTP</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <description>A plugin to randomly teleport, fork of JWildTP</description>
 
     <properties>
